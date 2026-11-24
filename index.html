@@ -21,7 +21,7 @@
 <li>What you enter is stored on your iPhone. Rinual has no account and no server of its own.</li>
 <li>iCloud sync is optional and stays off until you turn it on. When it’s on, your data is kept in your own private iCloud database, which the developer can’t read.</li>
 <li>Rinual contains no advertising, analytics, tracking or crash-reporting code, and no third-party code.</li>
-<li>Rinual connects only to Apple’s services: iCloud when sync is on, the App Store for the optional tip, and the App Store’s search when you ask for an app icon.</li>
+<li>Rinual connects only to Apple’s services: iCloud when sync is on, and the App Store for the optional tip. Rinual 1.0 (1), the first TestFlight build, also uses the App Store’s search when you ask for an app icon.</li>
 <li>Apart from what Apple shares with the developer under its own terms (see “Diagnostics” and “TestFlight beta”), the developer receives information from you only if you choose to send it, such as an email or TestFlight feedback.</li>
 </ul>
 
@@ -31,9 +31,9 @@
 <li>your subscriptions, bills, renewals and payment plans (“items” below): their names, amounts and currencies, dates and schedules, categories, billing sources, card colours, notes and links;</li>
 <li>each item’s payment history, amount changes and other history;</li>
 <li>each item’s reminder settings;</li>
-<li>a subscription’s icon, if you choose a photo or an App Store icon for it.</li>
+<li>a subscription’s icon, if you choose a photo for it, or an App Store icon you chose in Rinual 1.0 (1).</li>
 </ul>
-<p>Rinual also stores its settings and a few small app states on your iPhone: appearance, payday, default reminder time, the App Store country or region you last chose, whether you finished the welcome screen, whether you answered “Not Now” when Rinual explained reminders, which ended free trials you’ve already been told about, category renames waiting to reach iCloud, and, if you use iCloud sync, the sync status described below.</p>
+<p>Rinual also stores its settings and a few small app states on your iPhone: appearance, payday, default reminder time, the App Store country or region you last chose in Rinual 1.0 (1), whether you finished the welcome screen, whether you answered “Not Now” when Rinual explained reminders, which ended free trials you’ve already been told about, category renames waiting to reach iCloud, and, if you use iCloud sync, the sync status described below.</p>
 <p>A billing source is a short name you type, such as “Apple Pay”. Rinual never asks for card numbers, bank details or passwords, and it refuses a billing-source name that looks like a card number.</p>
 <p>For its widgets, Rinual keeps a small summary in a storage area on your iPhone that only Rinual and its widgets use (see “Widgets”).</p>
 <p>Rinual also keeps small internal records on your iPhone, for example about a deletion that hasn’t finished. They hold internal identifiers, dates and status codes, not names or amounts.</p>
@@ -49,7 +49,7 @@
 <li>Rinual keeps your information in your own private iCloud database, so it appears on your other iPhones (or iPads running Rinual) that are signed in to the same Apple Account and have sync turned on. It counts toward your iCloud storage.</li>
 <li>Everything you enter syncs: your items and their history, payments, reminder settings, categories, billing sources and icons.</li>
 <li>Three settings also sync, through iCloud key-value storage: the default reminder time, your payday, and which ended free trials you’ve already been told about (kept as internal identifiers and dates, without names).</li>
-<li>Your appearance choice, your App Store country or region, your notification permission, and the notifications scheduled on each iPhone, including Remind Me Later, stay on that iPhone.</li>
+<li>Your appearance choice, the App Store country or region you chose in Rinual 1.0 (1), your notification permission, and the notifications scheduled on each iPhone, including Remind Me Later, stay on that iPhone.</li>
 </ul>
 <p>Your private iCloud database belongs to your Apple Account. The developer can’t read it. Rinual has no server of its own, doesn’t use iCloud’s public or shared databases, and doesn’t share your records with anyone.</p>
 <p>While sync is on, Rinual checks which iCloud account is signed in when it opens, each time you return to it, and when iOS reports an account change.</p>
@@ -92,16 +92,17 @@
 <p>Turning sync off keeps your data on this iPhone and stops syncing it and the three settings. What’s already in iCloud and on your other iPhones stays there; to delete it, see “Delete All Data”. Rinual removes its sync copy from this iPhone, and keeps the account identifier so that, if you turn sync on again, it can tell whether it’s the same account.</p>
 
 <h2>App Store icons</h2>
-<p>You can give a subscription you picked from Rinual’s list its app’s icon from the App Store. Rinual asks Apple’s iTunes Search service (itunes.apple.com) only after you tap Use App Store Icon or Choose Another App:</p>
+<p>Builds after Rinual 1.0 (1) don’t look up App Store icons and don’t contact Apple’s iTunes Search service. A service you pick from Rinual’s list shows its icon, which comes with the app; a subscription you name yourself shows a photo you choose or the first two letters of its name (see “Photos”). Nothing is downloaded to show them.</p>
+<p>Rinual 1.0 (1), the first TestFlight build, can give a subscription its app’s icon from the App Store. It asks Apple’s iTunes Search service (itunes.apple.com) only after you tap Use App Store Icon or Choose Another App:</p>
 <ul>
-<li>For a service you picked from Rinual’s list, the request is sent as soon as the icon screen opens. It contains the service’s App Store number or, when Rinual doesn’t have one, the service’s English name from Rinual’s list.</li>
-<li>In Rinual 1.0 (1), the first TestFlight build, you could also search for a subscription you named yourself: the search box started with your subscription’s name, which you could change, and nothing was sent until you tapped Search the App Store or the keyboard’s Search key. Later builds offer only a photo for a subscription you named yourself (see “Photos”); an App Store icon it already has stays until you replace or remove it.</li>
+<li>For a service picked from Rinual’s list, the request is sent as soon as the icon screen opens. It contains the service’s App Store number or, when Rinual doesn’t have one, the service’s English name from Rinual’s list.</li>
+<li>For a subscription you named yourself, the search box starts with its name, which you can change, and nothing is sent until you tap Search the App Store or the keyboard’s Search key.</li>
 <li>Changing the country or region, or tapping Try Again, sends the request again.</li>
 </ul>
-<p>Each request contains only the App Store number or the search term (at most 60 characters), the App Store country or region shown with it, and fixed settings that ask for apps only and, for a search, for at most 10 results. It contains no amounts, dates, notes, categories or anything about your other items. As with any internet request, Apple also receives your device’s network (IP) address and the standard details iOS adds to requests, such as the app’s name and version, the iOS version and your preferred languages. Rinual sends no cookies and keeps no web cache.</p>
-<p>To show the apps found, Rinual then downloads their icons (at most 10) from Apple’s image servers (mzstatic.com), using the addresses in Apple’s answer. These icons are kept in memory only, while the screen is open. Only the icon you tap is saved: Rinual redraws it as a small 180 × 180-pixel image without metadata and saves it with that subscription. The app’s App Store number, name and address aren’t saved.</p>
-<p>To suggest a country or region, Rinual uses, in this order: the one you last chose; your App Store account’s country, which iOS gives Rinual when a subscription’s add or edit screen shows the App Store icon option, and which isn’t sent to the developer; your iPhone’s region; or the United States. Your choice is remembered on this iPhone as soon as you change it. It isn’t synced, and Delete All Data removes it.</p>
-<p>Apple handles these requests under its own privacy policy. App icons belong to their developers.</p>
+<p>Each of its requests contains only the App Store number or the search term (at most 60 characters), the App Store country or region shown with it, and fixed settings that ask for apps only and, for a search, for at most 10 results. It contains no amounts, dates, notes, categories or anything about your other items. As with any internet request, Apple also receives your device’s network (IP) address and the standard details iOS adds to requests, such as the app’s name and version, the iOS version and your preferred languages. Rinual sends no cookies and keeps no web cache.</p>
+<p>To show the apps found, Rinual 1.0 (1) then downloads their icons (at most 10) from Apple’s image servers (mzstatic.com), using the addresses in Apple’s answer, and keeps them in memory only while the screen is open. Only the icon you tap is saved: Rinual redraws it as a small 180 × 180-pixel image without metadata and saves it with that subscription. The app’s App Store number, name and address aren’t saved.</p>
+<p>To suggest a country or region, Rinual 1.0 (1) uses, in this order: the one you last chose; your App Store account’s country, which iOS gives Rinual on the iPhone and which isn’t sent to the developer; your iPhone’s region; or the United States. Your choice is remembered on that iPhone only. It isn’t synced, later builds don’t use it, and Delete All Data removes it.</p>
+<p>An App Store icon a subscription got in Rinual 1.0 (1) stays with it in later builds, on your iPhone and, with sync on, in iCloud, until you remove it or, for a subscription you named yourself, replace it with a photo. Apple handles these requests under its own privacy policy. App icons belong to their developers.</p>
 
 <h2>Photos</h2>
 <ul>
@@ -140,7 +141,7 @@
 <ul>
 <li>iCloud, while sync is on: to sync your data and the three settings, and to check which account is signed in.</li>
 <li>The App Store, each time Rinual starts: to ask whether the optional tip is offered and at what price, and to receive tips that finish later, such as one waiting for Ask to Buy approval. These requests carry nothing you entered.</li>
-<li>The App Store’s search, only when you ask for an App Store icon (see “App Store icons”).</li>
+<li>In Rinual 1.0 (1) only: the App Store’s search, when you ask for an App Store icon (see “App Store icons”). Later builds don’t use it.</li>
 </ul>
 <p>Links open outside Rinual, and only when you tap them. A link you saved for an item opens in your browser. Links in the About section of Settings, such as Privacy Policy and Send Feedback, open in your browser or your mail app. Rinual fetches nothing for these links, such as previews.</p>
 
@@ -220,7 +221,7 @@
 <h2>Security</h2>
 <ul>
 <li>Rinual’s data on your iPhone is protected by iOS’s data protection for app storage, which works with your iPhone’s passcode. Rinual adds no encryption of its own on the iPhone.</li>
-<li>Rinual’s requests to the App Store’s search and image servers use HTTPS only.</li>
+<li>Rinual 1.0 (1)’s requests to the App Store’s search and image servers use HTTPS only. Later builds make no such requests.</li>
 <li>Synced data is protected as described in “How synced data is protected”. For the strongest protection, Apple offers Advanced Data Protection for iCloud.</li>
 </ul>
 
