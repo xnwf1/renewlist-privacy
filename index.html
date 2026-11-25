@@ -13,15 +13,15 @@
 <header><span class="brand">Rinual</span><nav><a href="ar/" hreflang="ar" lang="ar">العربية</a></nav></header>
 <main>
 <h1>Rinual Privacy Policy</h1>
-<p>Last updated: 24 November 2026</p>
+<p>Last updated: 25 November 2026</p>
 <p>Rinual is an iPhone app for keeping track of subscriptions, bills, renewals and expirations, and payment plans. It is made by an independent developer, called “the developer” below. This policy explains what happens to the information you enter in Rinual and what Rinual sends over the internet. It covers the current version of the app, including its TestFlight beta.</p>
 
 <h2>In short</h2>
 <ul>
 <li>What you enter is stored on your iPhone. Rinual has no account and no server of its own.</li>
-<li>iCloud sync is optional and stays off until you turn it on. When it’s on, your data is kept in your own private iCloud database, which the developer can’t read.</li>
+<li>On a new installation, iCloud sync starts by itself once iCloud is available on your iPhone. Your data is then kept in your own private iCloud database, which the developer can’t read. Without iCloud, Rinual works on your iPhone alone.</li>
 <li>Rinual contains no advertising, analytics, tracking or crash-reporting code, and no third-party code.</li>
-<li>Rinual connects only to Apple’s services: iCloud when sync is on, and the App Store for the optional tip. Rinual 1.0 (1), the first TestFlight build, also uses the App Store’s search when you ask for an app icon.</li>
+<li>Rinual connects only to Apple’s services: iCloud for sync, unless sync is off on your iPhone, and the App Store for the optional tip. Rinual 1.0 (1), the first TestFlight build, also uses the App Store’s search when you ask for an app icon.</li>
 <li>Apart from what Apple shares with the developer under its own terms (see “Diagnostics” and “TestFlight beta”), the developer receives information from you only if you choose to send it, such as an email or TestFlight feedback.</li>
 </ul>
 
@@ -33,7 +33,7 @@
 <li>each item’s reminder settings;</li>
 <li>a subscription’s icon, if you choose a photo for it, or an App Store icon you chose in Rinual 1.0 (1).</li>
 </ul>
-<p>Rinual also stores its settings and a few small app states on your iPhone: appearance, payday, default reminder time, the App Store country or region you last chose in Rinual 1.0 (1), whether you finished the welcome screen, whether you answered “Not Now” when Rinual explained reminders, which ended free trials you’ve already been told about, category renames waiting to reach iCloud, and, if you use iCloud sync, the sync status described below.</p>
+<p>Rinual also stores its settings and a few small app states on your iPhone: appearance, payday, default reminder time, the App Store country or region you last chose in Rinual 1.0 (1), whether you finished the welcome screen, whether you answered “Not Now” when Rinual explained reminders, which ended free trials you’ve already been told about, category renames waiting to reach iCloud, and the state of iCloud sync described below.</p>
 <p>A billing source is a short name you type, such as “Apple Pay”. Rinual never asks for card numbers, bank details or passwords, and it refuses a billing-source name that looks like a card number.</p>
 <p>For its widgets, Rinual keeps a small summary in a storage area on your iPhone that only Rinual and its widgets use (see “Widgets”).</p>
 <p>Rinual also keeps small internal records on your iPhone, for example about a deletion that hasn’t finished. They hold internal identifiers, dates and status codes, not names or amounts.</p>
@@ -43,16 +43,17 @@
 <p>Rinual has no account of its own and never asks you to sign in. iCloud sync uses the Apple Account already signed in on your iPhone. Rinual doesn’t ask for your name, email address, phone number, postal address, age, contacts or location.</p>
 
 <h2>iCloud sync</h2>
-<p>iCloud sync is optional. It stays off until you turn on Sync with iCloud in Rinual’s Settings. While it’s off, Rinual sends nothing to iCloud and doesn’t check your iCloud account.</p>
-<p>When you turn it on:</p>
+<p>iCloud sync starts by itself; there is no switch to turn it on. On a new installation, Rinual starts syncing with the Apple Account signed in on your iPhone once you’ve finished the welcome screen and iCloud confirms which account it is. Without an iCloud account, or while iCloud isn’t allowed for Rinual, Rinual works on your iPhone alone, and once iCloud is available it starts syncing by itself, including what you entered meanwhile. Rinual’s Settings shows what sync is doing, under iCloud.</p>
+<p>An iPhone updated from an earlier build of Rinual keeps sync as it was. If sync was off there, or Rinual was waiting for your choice (for example after another account signed in or after it restored its copy), nothing is uploaded until you choose Turn On iCloud Sync or Choose What to Do… in Rinual’s Settings. While sync is off, Rinual sends nothing to iCloud and checks your iCloud account only when you tap one of them.</p>
+<p>While it syncs:</p>
 <ul>
-<li>Rinual keeps your information in your own private iCloud database, so it appears on your other iPhones (or iPads running Rinual) that are signed in to the same Apple Account and have sync turned on. It counts toward your iCloud storage.</li>
+<li>Rinual keeps your information in your own private iCloud database, so it appears on your other iPhones (or iPads running Rinual) that are signed in to the same Apple Account and sync too. It counts toward your iCloud storage.</li>
 <li>Everything you enter syncs: your items and their history, payments, reminder settings, categories, billing sources and icons.</li>
 <li>Three settings also sync, through iCloud key-value storage: the default reminder time, your payday, and which ended free trials you’ve already been told about (kept as internal identifiers and dates, without names).</li>
 <li>Your appearance choice, the App Store country or region you chose in Rinual 1.0 (1), your notification permission, and the notifications scheduled on each iPhone, including Remind Me Later, stay on that iPhone.</li>
 </ul>
 <p>Your private iCloud database belongs to your Apple Account. The developer can’t read it. Rinual has no server of its own, doesn’t use iCloud’s public or shared databases, and doesn’t share your records with anyone.</p>
-<p>While sync is on, Rinual checks which iCloud account is signed in when it opens, each time you return to it, and when iOS reports an account change.</p>
+<p>Unless sync is off on this iPhone, Rinual checks which iCloud account is signed in when it opens, each time you return to it, and when iOS reports an account change, also while it waits for iCloud to become available. It starts syncing only after iCloud confirms the account.</p>
 
 <h2>How synced data is protected</h2>
 <p>Rinual asks iCloud to store these as encrypted fields:</p>
@@ -82,14 +83,19 @@
 <ul>
 <li>To know which account it syncs with, Rinual keeps, on your iPhone only, an identifier that iCloud gives Rinual for your account. It isn’t your name or email address, and Rinual doesn’t send it anywhere.</li>
 <li>If you sign out of iCloud, sync pauses and your information stays on your iPhone. Sync resumes by itself when you sign in again with the same account.</li>
-<li>If a different Apple Account signs in, sync pauses and Rinual tells you. Nothing is uploaded to the new account unless you choose Use This iPhone’s Data with This Account.</li>
+<li>If a different Apple Account signs in, sync pauses and Rinual tells you. Nothing is uploaded to the new account unless you choose Use This iPhone’s Data with This Account. Keep It on This iPhone turns sync off on this iPhone and keeps your data here. If you choose Decide Later, Settings offers the choice again (Choose What to Do…).</li>
 <li>When the account changes while Rinual is syncing, iOS can remove the synced data from your iPhone. To guard against this, Rinual keeps a full copy of your data, icons included, on your iPhone while sync is working. If iOS removes the data, Rinual restores the copy, turns sync off and tells you.</li>
-<li>If your data is removed through iCloud and Rinual can’t tell whether that was intended, for example because it was deleted on another device, Rinual keeps the copy apart on this iPhone and asks whether to Restore the Copy or Delete the Copy. The copy stays until you decide, until Rinual learns the data was deleted from all devices, or until you use Delete All Data.</li>
-<li>Upload This iPhone’s Data and Use This iPhone’s Data with This Account upload a copy of this iPhone’s data to the account signed in now. They don’t remove anything from the previous account’s iCloud. Use iCloud’s Copy replaces the data on this iPhone with what iCloud has.</li>
+<li>If your data is removed through iCloud and Rinual can’t tell whether that was intended, for example because it was deleted on another device, Rinual keeps the copy apart on this iPhone and asks whether to Restore the Copy or Delete the Copy. The copy stays until you decide, until Rinual learns the data was deleted from all devices, or until Delete All Data removes it. If you choose Not Now, Settings offers the choice again (Review the Copy Rinual Kept…).</li>
+<li>Upload This iPhone’s Data and Use This iPhone’s Data with This Account upload a copy of this iPhone’s data to the account signed in now, and Turn On iCloud Sync syncs this iPhone’s data with it, unless Rinual needs your choice first. They don’t remove anything from the previous account’s iCloud. Use iCloud’s Copy, and Replace with iCloud’s Copy when you turn sync on again, replace the data on this iPhone with what iCloud has.</li>
 </ul>
 
-<h2>Turning sync off</h2>
-<p>Turning sync off keeps your data on this iPhone and stops syncing it and the three settings. What’s already in iCloud and on your other iPhones stays there; to delete it, see “Delete All Data”. Rinual removes its sync copy from this iPhone, and keeps the account identifier so that, if you turn sync on again, it can tell whether it’s the same account.</p>
+<h2>Stopping sync</h2>
+<p>Rinual has no switch of its own for iCloud sync. Sync stops:</p>
+<ul>
+<li>when you turn off iCloud for Rinual in the Settings app (under your name and then iCloud, where iOS lists the apps that use iCloud), or sign out of iCloud. Sync pauses, and resumes by itself when iCloud is allowed again with the same account, unless Rinual had to restore its copy (see “iCloud account changes”);</li>
+<li>when another account is signed in and you choose Keep It on This iPhone. Sync is then off on this iPhone until you tap Turn On iCloud Sync in Rinual’s Settings; if the account signed in then isn’t the one it synced with, Rinual asks first.</li>
+</ul>
+<p>When sync stops, your data stays on this iPhone, and Rinual stops syncing it and the three settings. What’s already in iCloud and on your other iPhones stays there; to delete it, see “Delete All Data”. Rinual removes its sync copy from this iPhone, and keeps the account identifier so that, when sync starts again, it can tell whether it’s the same account.</p>
 
 <h2>App Store icons</h2>
 <p>Builds after Rinual 1.0 (1) don’t look up App Store icons and don’t contact Apple’s iTunes Search service. A service you pick from Rinual’s list shows its icon, which comes with the app; a subscription you name yourself shows a photo you choose or the first two letters of its name (see “Photos”). Nothing is downloaded to show them.</p>
@@ -124,7 +130,7 @@
 <li>If a Mark as Paid tap can’t be recorded, Rinual keeps a short note on this iPhone (the time, an internal identifier, the due date and the reason, without names or amounts) until you dismiss its message or use Delete All Data.</li>
 <li>With sync on, each item’s reminder settings and the default reminder time sync, and each of your iPhones that syncs and allows Rinual’s notifications schedules the same reminders itself.</li>
 </ul>
-<p><strong>Silent notifications from iCloud.</strong> When sync starts, Rinual registers your iPhone so iCloud can send it silent notifications when your data changes on another device. They come from iCloud, not from the developer. Rinual shows nothing for them and doesn’t read them; iCloud uses them to signal that there are changes to fetch, and they don’t carry the information you entered. Rinual doesn’t cancel this registration when you turn sync off.</p>
+<p><strong>Silent notifications from iCloud.</strong> When sync starts, Rinual registers your iPhone so iCloud can send it silent notifications when your data changes on another device. They come from iCloud, not from the developer. Rinual shows nothing for them and doesn’t read them; iCloud uses them to signal that there are changes to fetch, and they don’t carry the information you entered. Rinual doesn’t cancel this registration when sync stops.</p>
 
 <h2>Widgets</h2>
 <ul>
@@ -139,7 +145,7 @@
 <h2>What Rinual connects to</h2>
 <p>Rinual makes internet connections only to Apple’s services:</p>
 <ul>
-<li>iCloud, while sync is on: to sync your data and the three settings, and to check which account is signed in.</li>
+<li>iCloud, unless sync is off on this iPhone: to check which account is signed in and, once iCloud confirms it, to sync your data and the three settings (see “iCloud sync”).</li>
 <li>The App Store, each time Rinual starts: to ask whether the optional tip is offered and at what price, and to receive tips that finish later, such as one waiting for Ask to Buy approval. These requests carry nothing you entered.</li>
 <li>In Rinual 1.0 (1) only: the App Store’s search, when you ask for an App Store icon (see “App Store icons”). Later builds don’t use it.</li>
 </ul>
@@ -159,23 +165,24 @@
 <ul>
 <li>Rinual asks before deleting an item. After you confirm, you can tap Undo for 5 seconds. If you leave Rinual during that time, the deletion is completed right away.</li>
 <li>The deletion removes the item and everything that belongs to it: its details, payment history, amount changes, reminders and icon. With iCloud sync on, it’s also removed from iCloud and from your other iPhones.</li>
-<li>Rinual keeps a small placeholder for each deleted item, so your other devices know it was deleted. The placeholder holds no name, notes, link, amounts or icon, only the item’s kind, status, currency code, dates and internal identifiers. It stays on your iPhone until you use Delete All Data and, with sync on, in iCloud until you use Delete from All Devices.</li>
+<li>Rinual keeps a small placeholder for each deleted item, so your other devices know it was deleted. The placeholder holds no name, notes, link, amounts or icon, only the item’s kind, status, currency code, dates and internal identifiers. It stays on your iPhone until Delete All Data deletes your data and, if it synced, in iCloud until Delete All Data deletes your data there while sync is active.</li>
 <li>Deleting a category or billing source works the same way, without Undo, and its placeholder keeps no name. Items in a deleted category move to another category or to none; items that used a deleted billing source change to “Not selected”.</li>
 </ul>
 
 <h2>Delete All Data</h2>
-<p>Settings → Delete All Data deletes Rinual’s data after you type DELETE to confirm. While iCloud sync is working, you choose where:</p>
+<p>Settings → Delete All Data is a single action. Before anything is deleted, it says what it will delete, which depends on iCloud sync:</p>
 <ul>
-<li><strong>Delete from All Devices</strong> deletes the data on this iPhone and in iCloud, placeholders included, and clears the three synced settings. It leaves a random identifier, with no content, in iCloud key-value storage, so your other iPhones know the deletion was intended and remove the data and their synced settings too. Sync stays on. The iCloud part finishes when this iPhone sends the change, so keep Rinual installed and open it while online until it says this iPhone has sent changes to iCloud.</li>
-<li><strong>Remove from This iPhone Only</strong> turns sync off, forgets which iCloud account this iPhone synced with, and removes the data from this iPhone. Nothing is deleted from iCloud or your other iPhones, and the synced settings stay as they are.</li>
+<li><strong>While iCloud sync is active</strong>, after you type DELETE to confirm, it deletes the data on this iPhone and in iCloud, placeholders included, and clears the three synced settings. It leaves a random identifier, with no content, in iCloud key-value storage, so your other iPhones know the deletion was intended and remove the data and their synced settings too when they next sync. Sync stays on. The iCloud part finishes when this iPhone sends the change, so keep Rinual installed and open it while online until it says this iPhone has sent changes to iCloud.</li>
+<li><strong>If your data has never synced with iCloud</strong>, after you type DELETE to confirm, it deletes the data from this iPhone only. Nothing is deleted from iCloud, and sync stays as it was: if it’s waiting for iCloud, it still starts by itself once iCloud is available.</li>
+<li><strong>If your data has synced with iCloud but sync isn’t active with that account now</strong> (sync is off on this iPhone, that account isn’t signed in, another account is signed in, or iCloud hasn’t confirmed the account yet), it deletes nothing, on this iPhone or in iCloud, and says why. Data Rinual restored from its copy counts as synced. Rinual never deletes only this iPhone’s copy of data that is in iCloud, and never deletes another account’s data. Instead, it offers what brings sync back with that account (Turn On iCloud Sync, Try Again or Choose What to Do…); once sync is active with it again, Delete All Data deletes the data everywhere, as above.</li>
 </ul>
-<p>When sync is paused, or off after this iPhone has synced, only Remove from This iPhone Only is available. To delete the data in iCloud from Rinual, sync must be working with the account that holds it.</p>
-<p>From this iPhone, Delete All Data removes everything you entered, Rinual’s settings and app states, its scheduled and delivered notifications, the widget summary and its icons, the copies kept for sync or recovery, and its internal records.</p>
+<p>If sync changes while Delete All Data is open, nothing is deleted: the typed word is cleared, and it says what it deletes now. If an earlier build of Rinual began deleting all data from this iPhone only and was interrupted, Rinual finishes that deletion as it began: on this iPhone only, and nothing is deleted from iCloud; if that data had synced, sync is turned off on this iPhone.</p>
+<p>When it deletes, Delete All Data removes from this iPhone everything you entered, Rinual’s settings and app states, its scheduled and delivered notifications, the widget summary and its icons, the copies kept for sync or recovery, and its internal records.</p>
 <p>It doesn’t remove:</p>
 <ul>
-<li>whether iCloud sync is on and, in some cases (for example after Delete from All Devices, which keeps sync on, or after Rinual restored its copy when the account changed), the identifier of an iCloud account it synced with;</li>
-<li>a few internal sync markers, such as which deletion from all devices it last applied (yes-or-no values and random identifiers, with no content of yours);</li>
-<li>if you used iCloud sync and didn’t choose Delete from All Devices, the three synced settings in iCloud key-value storage, of which iOS also keeps a copy on this iPhone;</li>
+<li>whether iCloud sync is on and, after it deletes through iCloud, which keeps sync on, the identifier of the iCloud account it syncs with;</li>
+<li>a few internal sync markers, such as which deletion of all data through iCloud it last applied and when sync started by itself (yes-or-no values, dates and random identifiers, with no content of yours);</li>
+<li>when it deletes on this iPhone only, anything in iCloud, including the three synced settings in iCloud key-value storage, of which iOS may also keep a copy on this iPhone;</li>
 <li>iOS settings, such as notification permission and Rinual’s language;</li>
 <li>copies you shared elsewhere, and backups of your iPhone made before.</li>
 </ul>
@@ -183,7 +190,7 @@
 
 <h2>Deleting the app</h2>
 <p>Deleting Rinual removes what it stored on this iPhone, including the widget summary. It doesn’t remove what is in iCloud (your private database and the synced settings), or earlier backups of your iPhone.</p>
-<p>To delete your data from iCloud, use Delete All Data → Delete from All Devices while sync is working, before you delete the app. If you’ve already deleted it, you can install Rinual again, turn on iCloud sync with the same Apple Account, wait for your data to appear, and then use Delete from All Devices. You can also see which apps use your iCloud storage in the Settings app, under your name and then iCloud, where iOS may let you delete an app’s data. If you need help, contact the developer.</p>
+<p>To delete your data from iCloud, use Delete All Data while iCloud sync is active, before you delete the app. If you’ve already deleted it, you can install Rinual again on an iPhone signed in to the same Apple Account: a new installation starts syncing by itself once you’ve finished the welcome screen, so wait for your data to appear, and then use Delete All Data. You can also see which apps use your iCloud storage in the Settings app, under your name and then iCloud, where iOS may let you delete an app’s data. If you need help, contact the developer.</p>
 
 <h2>Optional tips</h2>
 <ul>
